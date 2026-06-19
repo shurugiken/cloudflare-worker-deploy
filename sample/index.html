@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hello from a Cloudflare Worker</title>
+  <style>
+    :root { color-scheme: light dark; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      background: #0f1115;
+      color: #e7e9ee;
+    }
+    .card {
+      max-width: 32rem;
+      padding: 2.5rem;
+      text-align: center;
+    }
+    h1 { margin: 0 0 0.5rem; font-size: 1.75rem; }
+    p { margin: 0.25rem 0; line-height: 1.5; color: #aab0bd; }
+    code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      background: #1b1f27;
+      padding: 0.15rem 0.4rem;
+      border-radius: 0.3rem;
+      color: #d7dbe4;
+    }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <h1>Hello from a Cloudflare Worker</h1>
+    <p>This page is served straight from the edge as a Worker module.</p>
+    <p>Build it with <code>build_worker.py</code>, ship it with <code>deploy.py</code>.</p>
+  </main>
+</body>
+</html>

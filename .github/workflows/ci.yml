@@ -1,0 +1,27 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Compile-check scripts
+        run: python -m py_compile build_worker.py deploy.py
+
+      - name: Build Worker from the sample page
+        run: python build_worker.py --html sample/index.html --out worker.mjs --inline-assets
+
+      - name: Assert worker.mjs was produced
+        run: test -f worker.mjs
